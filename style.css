@@ -1,0 +1,133 @@
+body{
+    background: url(img/bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    height: 100vh;
+    min-height: 800px;
+}
+
+.eggs, .broken{
+    width: 800px;
+    height: 800px;
+    display: inline-block;
+    position: relative;
+    /*cursor: url(/pound_egg/img/cursor.jpg),auto;*/
+    /*cursor: pointer;*/
+}
+.eggs .title{
+    width: 75%;
+}
+.eggs .egg{
+    width: 150px;
+    position: absolute;
+    z-index: 3;
+    cursor: pointer;
+}
+.egg1{
+    left: 100px;
+    bottom: 50px;
+}
+.egg2{
+    left: 325px;
+    bottom: 50px;
+}
+.egg3{
+    left: 550px;
+    bottom: 50px;
+}
+.egg4{
+    left: 183px;
+    bottom: 157px;
+    width: 180px !important;
+    z-index: 2 !important;
+}
+.egg5{
+    left: 438px;
+    bottom: 157px;
+    z-index: 2 !important;
+}
+.egg6{
+    left: 328px;
+    bottom: 280px;
+    z-index: 1 !important;
+}
+.eggs .egg:hover{
+    width: 170px;
+}
+.eggs .egg4:hover{
+    width: 200px!important;
+}
+
+.cursor{
+    width: 100px;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.cursor.on{
+    animation: cursor 0.5s;
+}
+@keyframes cursor{
+    form {transform: rotate(0deg); }
+    to {transform: rotate(-45deg); }
+}
+.eggs.go{
+    z-index: -1;
+    animation: eggsgo 1s
+}
+@keyframes eggsgo{
+    0% {opacity: 1; }
+    50% {opacity: 1; }
+    100% {opacity: 0; }
+}
+
+.broken.on{
+    animation: brokenon 1s
+}
+@keyframes brokenon{
+    0% {opacity: 0; }
+    100% {opacity: 1; }
+}
+.broken .break{
+    width: 350px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.flower2{
+    width: 400px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 200px;
+    margin: auto;
+}
+.flower{
+    animation: flower 2s
+}
+@keyframes flower{
+    0% {opacity: 0; }
+    50% {opacity: 0; }
+    100% {opacity: 1; }
+}
+.sign{
+    width: 400px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 100px;
+    display: none;
+}
+.sign .num{
+    width: 90%;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
