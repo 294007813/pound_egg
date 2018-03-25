@@ -32,6 +32,10 @@ $(function () {
 		$(".cursor").css('top', (e.pageY-100) + "px").css("left",(e.pageX) + "px");
 	})
 	$(".egg").click(function () {
+		if(localStorage.getItem('egg')=='false'){
+			alert("Sorry， you have only one chance.")
+			return
+		}
 		$('.num').attr("src", "img/coupon-"+rand()+".png")
 		$(".cursor").addClass('on')
 		$(".eggs").addClass('go')
@@ -42,6 +46,7 @@ $(function () {
 			$('.flower1, .flower2').addClass('flower')
 			setTimeout(function () {
 				$(".sign").show()
+				localStorage.setItem('egg','false')
 			}, 2000)
 		},900)
 	})
