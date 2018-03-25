@@ -23,6 +23,7 @@
 		<img src="img/sign.png" style="width: 100%">
 		<img class="num" src="">
 	</div>
+	<img class="back" src="img/back.png">
 </div>
 <img class="cursor" src="img/cursor.jpg">
 <script src="lib/jquery-3.2.1.min.js"></script>
@@ -32,10 +33,6 @@ $(function () {
 		$(".cursor").css('top', (e.pageY-100) + "px").css("left",(e.pageX) + "px");
 	})
 	$(".egg").click(function () {
-		if(localStorage.getItem('egg')=='false'){
-			alert("Sorry， you have only one chance.")
-			return
-		}
 		$('.num').attr("src", "img/coupon-"+rand()+".png")
 		$(".cursor").addClass('on')
 		$(".eggs").addClass('go')
@@ -46,9 +43,23 @@ $(function () {
 			$('.flower1, .flower2').addClass('flower')
 			setTimeout(function () {
 				$(".sign").show()
-				localStorage.setItem('egg','false')
+				$(".back").show()
 			}, 2000)
 		},900)
+	})
+
+	$(".back").click(function () {
+		// location.reload();
+		$(".cursor").removeClass('on')
+		$(".eggs").removeClass('go')
+
+		$(".eggs").show()
+		$(".cursor").show()
+		$(".broken").hide().removeClass('on')
+		$('.flower1, .flower2').removeClass('flower')
+
+		$(".sign").hide()
+		$(".back").hide()
 	})
 })
 	function rand() {
